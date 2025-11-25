@@ -1,0 +1,2630 @@
+[16-Jun-2025 16:21:04 UTC] Database connection successful
+[16-Jun-2025 16:21:04 UTC] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[16-Jun-2025 16:21:40 UTC] Database connection successful
+[16-Jun-2025 16:21:40 UTC] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[16-Jun-2025 16:21:40 UTC] POST Data received: Array
+(
+    [name] => Customer 1
+    [contact_number] => 09123456781
+    [username] => customer1
+    [email] => customer1@water.com
+    [password] => Password123!
+    [confirm_password] => Password123!
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => test
+)
+
+[16-Jun-2025 16:21:40 UTC] Sanitized Data: Array
+(
+    [username] => customer1
+    [email] => customer1@water.com
+    [name] => Customer 1
+    [contact_number] => 09123456781
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => test
+)
+
+[16-Jun-2025 16:21:40 UTC] Started transaction
+[16-Jun-2025 16:21:40 UTC] Transaction rolled back due to error: Unknown column 'sitio_purok' in 'field list'
+[16-Jun-2025 16:23:20 UTC] Database connection successful
+[16-Jun-2025 16:23:20 UTC] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[16-Jun-2025 16:23:20 UTC] POST Data received: Array
+(
+    [name] => Customer 1
+    [contact_number] => 09123456781
+    [username] => customer1
+    [email] => customer1@water.com
+    [password] => Password!
+    [confirm_password] => Password!
+    [branch_id] => 1
+    [barangay_id] => 1
+    [sitio_purok] => test
+)
+
+[16-Jun-2025 16:23:20 UTC] Sanitized Data: Array
+(
+    [username] => customer1
+    [email] => customer1@water.com
+    [name] => Customer 1
+    [contact_number] => 09123456781
+    [branch_id] => 1
+    [barangay_id] => 1
+    [sitio_purok] => test
+)
+
+[16-Jun-2025 16:23:20 UTC] Validation Error: Password requirements not met
+[16-Jun-2025 16:23:40 UTC] Database connection successful
+[16-Jun-2025 16:23:40 UTC] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[16-Jun-2025 16:23:40 UTC] POST Data received: Array
+(
+    [name] => Customer 1
+    [contact_number] => 09123456781
+    [username] => customer1
+    [email] => customer1@water.com
+    [password] => Password123!
+    [confirm_password] => Password123!
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => test
+)
+
+[16-Jun-2025 16:23:40 UTC] Sanitized Data: Array
+(
+    [username] => customer1
+    [email] => customer1@water.com
+    [name] => Customer 1
+    [contact_number] => 09123456781
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => test
+)
+
+[16-Jun-2025 16:23:40 UTC] Started transaction
+[16-Jun-2025 16:23:40 UTC] Attempting to insert user with query: 00000
+[16-Jun-2025 16:23:40 UTC] User inserted successfully with ID: 5
+[16-Jun-2025 16:23:40 UTC] Loyalty record created
+[16-Jun-2025 16:23:40 UTC] Activity logged
+[16-Jun-2025 16:23:40 UTC] Transaction committed
+[16-Jun-2025 16:23:40 UTC] Registration successful for user: customer1
+[29-Jun-2025 06:49:44 Europe/Berlin] Database connection successful
+[29-Jun-2025 06:49:44 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 06:50:56 Europe/Berlin] Database connection successful
+[29-Jun-2025 06:50:56 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 06:50:56 Europe/Berlin] POST Data received: Array
+(
+    [name] => Anne Manalo
+    [contact_number] => 09876543211
+    [username] => Anne
+    [email] => anne@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 1
+    [barangay_id] => 2
+    [sitio_purok] => Silangan
+)
+
+[29-Jun-2025 06:50:56 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Anne
+    [email] => anne@gmail.com
+    [name] => Anne Manalo
+    [contact_number] => 09876543211
+    [branch_id] => 1
+    [barangay_id] => 2
+    [sitio_purok] => Silangan
+)
+
+[29-Jun-2025 06:50:56 Europe/Berlin] Started transaction
+[29-Jun-2025 06:50:56 Europe/Berlin] Attempting to insert user with query: 00000
+[29-Jun-2025 06:50:56 Europe/Berlin] User inserted successfully with ID: 6
+[29-Jun-2025 06:50:56 Europe/Berlin] Loyalty record created
+[29-Jun-2025 06:50:56 Europe/Berlin] Activity logged
+[29-Jun-2025 06:50:56 Europe/Berlin] Transaction committed
+[29-Jun-2025 06:50:56 Europe/Berlin] Registration successful for user: Anne
+[29-Jun-2025 06:53:02 Europe/Berlin] Database connection successful
+[29-Jun-2025 06:53:02 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 06:56:17 Europe/Berlin] Database connection successful
+[29-Jun-2025 06:56:17 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 06:57:56 Europe/Berlin] Database connection successful
+[29-Jun-2025 06:57:56 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 06:57:56 Europe/Berlin] POST Data received: Array
+(
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [username] => marymm
+    [email] => maryjoymacalindol1209@gmail.com
+    [password] => Macalindol@123
+    [confirm_password] => Macalindol@123
+    [branch_id] => 2
+    [barangay_id] => 5
+    [sitio_purok] => Centro
+)
+
+[29-Jun-2025 06:57:56 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => marymm
+    [email] => maryjoymacalindol1209@gmail.com
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [branch_id] => 2
+    [barangay_id] => 5
+    [sitio_purok] => Centro
+)
+
+[29-Jun-2025 06:57:56 Europe/Berlin] Started transaction
+[29-Jun-2025 06:57:56 Europe/Berlin] Attempting to insert user with query: 00000
+[29-Jun-2025 06:57:56 Europe/Berlin] User inserted successfully with ID: 7
+[29-Jun-2025 06:57:56 Europe/Berlin] Transaction rolled back due to error: Duplicate entry '7' for key 'customer_id'
+[29-Jun-2025 06:58:37 Europe/Berlin] Database connection successful
+[29-Jun-2025 06:58:37 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 06:58:37 Europe/Berlin] POST Data received: Array
+(
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [username] => marymm
+    [email] => maryjoymacalindol1209@gmail.com
+    [password] => Mary@1234
+    [confirm_password] => Mary@1234
+    [branch_id] => 1
+    [barangay_id] => 1
+    [sitio_purok] => Centro
+)
+
+[29-Jun-2025 06:58:37 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => marymm
+    [email] => maryjoymacalindol1209@gmail.com
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [branch_id] => 1
+    [barangay_id] => 1
+    [sitio_purok] => Centro
+)
+
+[29-Jun-2025 06:58:37 Europe/Berlin] Started transaction
+[29-Jun-2025 06:58:37 Europe/Berlin] Error: Username already exists
+[29-Jun-2025 07:41:36 Europe/Berlin] Database connection successful
+[29-Jun-2025 07:41:36 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 07:42:30 Europe/Berlin] Database connection successful
+[29-Jun-2025 07:42:30 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 07:42:30 Europe/Berlin] POST Data received: Array
+(
+    [name] => Marie Manalo
+    [contact_number] => 09876543211
+    [username] => Marie
+    [email] => marie@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 1
+    [barangay_id] => 1
+    [sitio_purok] => Silangan
+)
+
+[29-Jun-2025 07:42:30 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Marie
+    [email] => marie@gmail.com
+    [name] => Marie Manalo
+    [contact_number] => 09876543211
+    [branch_id] => 1
+    [barangay_id] => 1
+    [sitio_purok] => Silangan
+)
+
+[29-Jun-2025 07:42:30 Europe/Berlin] Started transaction
+[29-Jun-2025 07:42:30 Europe/Berlin] Attempting to insert user with query: 00000
+[29-Jun-2025 07:42:30 Europe/Berlin] User inserted successfully with ID: 8
+[29-Jun-2025 07:42:30 Europe/Berlin] Loyalty record created
+[29-Jun-2025 07:42:30 Europe/Berlin] Activity logged
+[29-Jun-2025 07:42:30 Europe/Berlin] Transaction committed
+[29-Jun-2025 07:42:30 Europe/Berlin] Registration successful for user: Marie
+[29-Jun-2025 08:27:20 Europe/Berlin] Database connection successful
+[29-Jun-2025 08:27:20 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 08:33:19 Europe/Berlin] Database connection successful
+[29-Jun-2025 08:33:19 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 08:51:44 Europe/Berlin] Database connection successful
+[29-Jun-2025 08:51:44 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 09:13:17 Europe/Berlin] Database connection successful
+[29-Jun-2025 09:13:17 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[29-Jun-2025 09:13:17 Europe/Berlin] POST Data received: Array
+(
+    [name] => Harvey Manibo
+    [contact_number] => 09071777752
+    [username] => harvey12
+    [email] => harveypotpottt@gmail.com
+    [password] => Harvey@123
+    [confirm_password] => Harvey@123
+    [branch_id] => 1
+    [barangay_id] => 30
+    [sitio_purok] => Irrigation
+)
+
+[29-Jun-2025 09:13:17 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => harvey12
+    [email] => harveypotpottt@gmail.com
+    [name] => Harvey Manibo
+    [contact_number] => 09071777752
+    [branch_id] => 1
+    [barangay_id] => 30
+    [sitio_purok] => Irrigation
+)
+
+[29-Jun-2025 09:13:17 Europe/Berlin] Started transaction
+[29-Jun-2025 09:13:17 Europe/Berlin] Attempting to insert user with query: 00000
+[29-Jun-2025 09:13:17 Europe/Berlin] User inserted successfully with ID: 9
+[29-Jun-2025 09:13:17 Europe/Berlin] Loyalty record created
+[29-Jun-2025 09:13:17 Europe/Berlin] Activity logged
+[29-Jun-2025 09:13:17 Europe/Berlin] Transaction committed
+[29-Jun-2025 09:13:17 Europe/Berlin] Registration successful for user: harvey12
+[30-Jun-2025 01:18:57 Europe/Berlin] Database connection successful
+[30-Jun-2025 01:18:57 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[30-Jun-2025 01:20:11 Europe/Berlin] Database connection successful
+[30-Jun-2025 01:20:11 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[30-Jun-2025 01:26:21 Europe/Berlin] Database connection successful
+[30-Jun-2025 01:26:21 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[30-Jun-2025 01:27:17 Europe/Berlin] Database connection successful
+[30-Jun-2025 01:27:17 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[30-Jun-2025 01:27:17 Europe/Berlin] POST Data received: Array
+(
+    [name] => Anne Manalo
+    [contact_number] => 09876543211
+    [username] => anne123
+    [email] => anne@gmail.com
+    [password] => Anne@123
+    [confirm_password] => Anne@123
+    [branch_id] => 1
+    [barangay_id] => 20
+    [sitio_purok] => Centro
+)
+
+[30-Jun-2025 01:27:17 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => anne123
+    [email] => anne@gmail.com
+    [name] => Anne Manalo
+    [contact_number] => 09876543211
+    [branch_id] => 1
+    [barangay_id] => 20
+    [sitio_purok] => Centro
+)
+
+[30-Jun-2025 01:27:17 Europe/Berlin] Started transaction
+[30-Jun-2025 01:27:17 Europe/Berlin] Attempting to insert user with query: 00000
+[30-Jun-2025 01:27:17 Europe/Berlin] User inserted successfully with ID: 10
+[30-Jun-2025 01:27:17 Europe/Berlin] Loyalty record created
+[30-Jun-2025 01:27:17 Europe/Berlin] Activity logged
+[30-Jun-2025 01:27:17 Europe/Berlin] Transaction committed
+[30-Jun-2025 01:27:17 Europe/Berlin] Registration successful for user: anne123
+[30-Jun-2025 04:07:32 Europe/Berlin] Database connection successful
+[30-Jun-2025 04:07:32 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[30-Jun-2025 08:19:15 Europe/Berlin] Database connection successful
+[30-Jun-2025 08:19:15 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[30-Jun-2025 08:42:02 Europe/Berlin] Database connection successful
+[30-Jun-2025 08:42:02 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Jul-2025 17:28:48 Europe/Berlin] Database connection successful
+[06-Jul-2025 17:28:48 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Jul-2025 17:29:33 Europe/Berlin] Database connection successful
+[06-Jul-2025 17:29:33 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Jul-2025 17:29:33 Europe/Berlin] POST Data received: Array
+(
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [username] => mary
+    [email] => maryjoymacalindol1209@gmail.com
+    [password] => Mary@123
+    [confirm_password] => Mary@123
+    [branch_id] => 2
+    [barangay_id] => 9
+    [sitio_purok] => Centro
+)
+
+[06-Jul-2025 17:29:33 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => mary
+    [email] => maryjoymacalindol1209@gmail.com
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [branch_id] => 2
+    [barangay_id] => 9
+    [sitio_purok] => Centro
+)
+
+[06-Jul-2025 17:29:33 Europe/Berlin] Started transaction
+[06-Jul-2025 17:29:33 Europe/Berlin] Error: Email already exists
+[06-Jul-2025 17:30:22 Europe/Berlin] Database connection successful
+[06-Jul-2025 17:30:22 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Jul-2025 17:30:22 Europe/Berlin] POST Data received: Array
+(
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [username] => mary
+    [email] => maryjoymacalindol06@gmail.com
+    [password] => Mary@123
+    [confirm_password] => Mary@123
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => Centro
+)
+
+[06-Jul-2025 17:30:22 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => mary
+    [email] => maryjoymacalindol06@gmail.com
+    [name] => Mary Joy Macalindol
+    [contact_number] => 09914113375
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => Centro
+)
+
+[06-Jul-2025 17:30:22 Europe/Berlin] Started transaction
+[06-Jul-2025 17:30:22 Europe/Berlin] Attempting to insert user with query: 00000
+[06-Jul-2025 17:30:22 Europe/Berlin] User inserted successfully with ID: 11
+[06-Jul-2025 17:30:22 Europe/Berlin] Loyalty record created
+[06-Jul-2025 17:30:22 Europe/Berlin] Activity logged
+[06-Jul-2025 17:30:22 Europe/Berlin] Transaction committed
+[06-Jul-2025 17:30:22 Europe/Berlin] Registration successful for user: mary
+[07-Jul-2025 03:18:03 Europe/Berlin] Database connection successful
+[07-Jul-2025 03:18:03 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[07-Jul-2025 04:31:06 Europe/Berlin] Database connection successful
+[07-Jul-2025 04:31:06 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[07-Jul-2025 04:33:16 Europe/Berlin] Database connection successful
+[07-Jul-2025 04:33:16 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 14:37:45 Europe/Berlin] Database connection successful
+[01-Aug-2025 14:37:45 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 14:53:52 Europe/Berlin] Database connection successful
+[01-Aug-2025 14:53:52 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 15:05:30 Europe/Berlin] Database connection successful
+[01-Aug-2025 15:05:30 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 15:19:20 Europe/Berlin] Database connection successful
+[01-Aug-2025 15:19:20 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 15:19:20 Europe/Berlin] POST Data received: Array
+(
+    [name] => Sarah Reyes
+    [contact_number] => 09925672570
+    [username] => sarahreyes23
+    [email] => sarahreyes23@gmail.com
+    [password] => Sarahsarah@23
+    [confirm_password] => Sarahsarah@23
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Silangan
+)
+
+[01-Aug-2025 15:19:20 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => sarahreyes23
+    [email] => sarahreyes23@gmail.com
+    [name] => Sarah Reyes
+    [contact_number] => 09925672570
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Silangan
+)
+
+[01-Aug-2025 15:19:20 Europe/Berlin] Started transaction
+[01-Aug-2025 15:19:20 Europe/Berlin] Attempting to insert user with query: 00000
+[01-Aug-2025 15:19:20 Europe/Berlin] User inserted successfully with ID: 12
+[01-Aug-2025 15:19:20 Europe/Berlin] Loyalty record created
+[01-Aug-2025 15:19:20 Europe/Berlin] Activity logged
+[01-Aug-2025 15:19:20 Europe/Berlin] Transaction committed
+[01-Aug-2025 15:19:20 Europe/Berlin] Registration successful for user: sarahreyes23
+[01-Aug-2025 15:19:43 Europe/Berlin] Database connection successful
+[01-Aug-2025 15:19:43 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 15:22:23 Europe/Berlin] Database connection successful
+[01-Aug-2025 15:22:23 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 15:22:23 Europe/Berlin] POST Data received: Array
+(
+    [name] => John Santos
+    [contact_number] => 09183452861
+    [username] => johnny47
+    [email] => johnsantos47@gmail.com
+    [password] => Janjan@47
+    [confirm_password] => Janjan@47
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Centro
+)
+
+[01-Aug-2025 15:22:23 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => johnny47
+    [email] => johnsantos47@gmail.com
+    [name] => John Santos
+    [contact_number] => 09183452861
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Centro
+)
+
+[01-Aug-2025 15:22:23 Europe/Berlin] Started transaction
+[01-Aug-2025 15:22:23 Europe/Berlin] Attempting to insert user with query: 00000
+[01-Aug-2025 15:22:23 Europe/Berlin] User inserted successfully with ID: 13
+[01-Aug-2025 15:22:23 Europe/Berlin] Loyalty record created
+[01-Aug-2025 15:22:23 Europe/Berlin] Activity logged
+[01-Aug-2025 15:22:23 Europe/Berlin] Transaction committed
+[01-Aug-2025 15:22:23 Europe/Berlin] Registration successful for user: johnny47
+[01-Aug-2025 15:22:43 Europe/Berlin] Database connection successful
+[01-Aug-2025 15:22:43 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[01-Aug-2025 15:22:43 Europe/Berlin] POST Data received: Array
+(
+    [name] => John Santos
+    [contact_number] => 09183452861
+    [username] => johnny47
+    [email] => johnsantos47@gmail.com
+    [password] => Janjan@47
+    [confirm_password] => Janjan@47
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Centro
+)
+
+[01-Aug-2025 15:22:43 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => johnny47
+    [email] => johnsantos47@gmail.com
+    [name] => John Santos
+    [contact_number] => 09183452861
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Centro
+)
+
+[01-Aug-2025 15:22:43 Europe/Berlin] Started transaction
+[01-Aug-2025 15:22:43 Europe/Berlin] Error: Username already exists
+[11-Aug-2025 15:45:37 Europe/Berlin] Database connection successful
+[11-Aug-2025 15:45:37 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[11-Aug-2025 15:48:42 Europe/Berlin] Database connection successful
+[11-Aug-2025 15:48:42 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[11-Aug-2025 15:48:42 Europe/Berlin] POST Data received: Array
+(
+    [name] => Maria Lopez
+    [contact_number] => 09067824593
+    [username] => marialopez56
+    [email] => marialopez56@gmail.com
+    [password] => Maria@12345
+    [confirm_password] => Maria@12345
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => Centro
+)
+
+[11-Aug-2025 15:48:42 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => marialopez56
+    [email] => marialopez56@gmail.com
+    [name] => Maria Lopez
+    [contact_number] => 09067824593
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => Centro
+)
+
+[11-Aug-2025 15:48:42 Europe/Berlin] Started transaction
+[11-Aug-2025 15:48:42 Europe/Berlin] Attempting to insert user with query: 00000
+[11-Aug-2025 15:48:42 Europe/Berlin] User inserted successfully with ID: 14
+[11-Aug-2025 15:48:42 Europe/Berlin] Loyalty record created
+[11-Aug-2025 15:48:42 Europe/Berlin] Activity logged
+[11-Aug-2025 15:48:42 Europe/Berlin] Transaction committed
+[11-Aug-2025 15:48:42 Europe/Berlin] Registration successful for user: marialopez56
+[12-Aug-2025 04:28:35 Europe/Berlin] Database connection successful
+[12-Aug-2025 04:28:35 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[12-Aug-2025 04:29:52 Europe/Berlin] Database connection successful
+[12-Aug-2025 04:29:52 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[12-Aug-2025 04:29:52 Europe/Berlin] POST Data received: Array
+(
+    [name] => gellie
+    [contact_number] => 09309195009
+    [username] => gellie
+    [email] => gill@manalo
+    [password] => 123456@Qwerty
+    [confirm_password] => 123456@Qwerty
+    [branch_id] => 1
+    [barangay_id] => 15
+    [sitio_purok] => Cadre
+)
+
+[12-Aug-2025 04:29:52 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => gellie
+    [email] => gill@manalo
+    [name] => gellie
+    [contact_number] => 09309195009
+    [branch_id] => 1
+    [barangay_id] => 15
+    [sitio_purok] => Cadre
+)
+
+[12-Aug-2025 04:29:52 Europe/Berlin] Validation Error: Invalid email format
+[12-Aug-2025 04:31:12 Europe/Berlin] Database connection successful
+[12-Aug-2025 04:31:12 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[12-Aug-2025 04:31:12 Europe/Berlin] POST Data received: Array
+(
+    [name] => gellie
+    [contact_number] => 09309195009
+    [username] => gellie
+    [email] => gill@gmail.com
+    [password] => Gellie@12345
+    [confirm_password] => Gellie@12345
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => Cadre
+)
+
+[12-Aug-2025 04:31:12 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => gellie
+    [email] => gill@gmail.com
+    [name] => gellie
+    [contact_number] => 09309195009
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => Cadre
+)
+
+[12-Aug-2025 04:31:12 Europe/Berlin] Started transaction
+[12-Aug-2025 04:31:12 Europe/Berlin] Attempting to insert user with query: 00000
+[12-Aug-2025 04:31:12 Europe/Berlin] User inserted successfully with ID: 15
+[12-Aug-2025 04:31:12 Europe/Berlin] Loyalty record created
+[12-Aug-2025 04:31:12 Europe/Berlin] Activity logged
+[12-Aug-2025 04:31:12 Europe/Berlin] Transaction committed
+[12-Aug-2025 04:31:12 Europe/Berlin] Registration successful for user: gellie
+[14-Aug-2025 06:47:15 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:47:15 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:51:20 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:51:20 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:51:20 Europe/Berlin] POST Data received: Array
+(
+    [name] => James Cruz
+    [contact_number] => 09214563728
+    [username] => jamescruz82
+    [email] => jamescruz82@outlook.com
+    [password] => James@12345
+    [confirm_password] => James@12345
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => Centr
+)
+
+[14-Aug-2025 06:51:20 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => jamescruz82
+    [email] => jamescruz82@outlook.com
+    [name] => James Cruz
+    [contact_number] => 09214563728
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => Centr
+)
+
+[14-Aug-2025 06:51:20 Europe/Berlin] Started transaction
+[14-Aug-2025 06:51:20 Europe/Berlin] Attempting to insert user with query: 00000
+[14-Aug-2025 06:51:20 Europe/Berlin] User inserted successfully with ID: 16
+[14-Aug-2025 06:51:20 Europe/Berlin] Loyalty record created
+[14-Aug-2025 06:51:20 Europe/Berlin] Activity logged
+[14-Aug-2025 06:51:20 Europe/Berlin] Transaction committed
+[14-Aug-2025 06:51:20 Europe/Berlin] Registration successful for user: jamescruz82
+[14-Aug-2025 06:51:24 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:51:24 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:53:07 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:53:07 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:53:58 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:53:58 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:53:58 Europe/Berlin] POST Data received: Array
+(
+    [name] => Angela Torres
+    [contact_number] => 09352849016
+    [username] => angelatorres91
+    [email] => angelatorres91@gmail.com
+    [password] => Angela@12345
+    [confirm_password] => Angela@12345
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => Centro
+)
+
+[14-Aug-2025 06:53:58 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => angelatorres91
+    [email] => angelatorres91@gmail.com
+    [name] => Angela Torres
+    [contact_number] => 09352849016
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => Centro
+)
+
+[14-Aug-2025 06:53:58 Europe/Berlin] Started transaction
+[14-Aug-2025 06:53:58 Europe/Berlin] Attempting to insert user with query: 00000
+[14-Aug-2025 06:53:58 Europe/Berlin] User inserted successfully with ID: 17
+[14-Aug-2025 06:53:58 Europe/Berlin] Loyalty record created
+[14-Aug-2025 06:53:58 Europe/Berlin] Activity logged
+[14-Aug-2025 06:53:58 Europe/Berlin] Transaction committed
+[14-Aug-2025 06:53:58 Europe/Berlin] Registration successful for user: angelatorres91
+[14-Aug-2025 06:54:57 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:54:57 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:56:00 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:56:00 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:56:00 Europe/Berlin] POST Data received: Array
+(
+    [name] => Mark Villanueva
+    [contact_number] => 09176538490
+    [username] => markvillanueva74
+    [email] => markvillanueva74@yahoo.com
+    [password] => Mark@12345
+    [confirm_password] => Mark@12345
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => centro
+)
+
+[14-Aug-2025 06:56:00 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => markvillanueva74
+    [email] => markvillanueva74@yahoo.com
+    [name] => Mark Villanueva
+    [contact_number] => 09176538490
+    [branch_id] => 2
+    [barangay_id] => 4
+    [sitio_purok] => centro
+)
+
+[14-Aug-2025 06:56:00 Europe/Berlin] Started transaction
+[14-Aug-2025 06:56:00 Europe/Berlin] Attempting to insert user with query: 00000
+[14-Aug-2025 06:56:00 Europe/Berlin] User inserted successfully with ID: 18
+[14-Aug-2025 06:56:00 Europe/Berlin] Loyalty record created
+[14-Aug-2025 06:56:00 Europe/Berlin] Activity logged
+[14-Aug-2025 06:56:00 Europe/Berlin] Transaction committed
+[14-Aug-2025 06:56:00 Europe/Berlin] Registration successful for user: markvillanueva74
+[14-Aug-2025 06:56:54 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:56:54 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:58:04 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:58:04 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 06:58:04 Europe/Berlin] POST Data received: Array
+(
+    [name] =>  Nicole Ramos
+    [contact_number] => 09916572834
+    [username] => nicoleramos69
+    [email] => Nicoleramos69@gmail.com
+    [password] => Nicole@12345
+    [confirm_password] => Nicole@12345
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => Centro
+)
+
+[14-Aug-2025 06:58:04 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => nicoleramos69
+    [email] => Nicoleramos69@gmail.com
+    [name] => Nicole Ramos
+    [contact_number] => 09916572834
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => Centro
+)
+
+[14-Aug-2025 06:58:04 Europe/Berlin] Started transaction
+[14-Aug-2025 06:58:05 Europe/Berlin] Attempting to insert user with query: 00000
+[14-Aug-2025 06:58:05 Europe/Berlin] User inserted successfully with ID: 19
+[14-Aug-2025 06:58:05 Europe/Berlin] Loyalty record created
+[14-Aug-2025 06:58:05 Europe/Berlin] Activity logged
+[14-Aug-2025 06:58:05 Europe/Berlin] Transaction committed
+[14-Aug-2025 06:58:05 Europe/Berlin] Registration successful for user: nicoleramos69
+[14-Aug-2025 06:59:39 Europe/Berlin] Database connection successful
+[14-Aug-2025 06:59:39 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 07:00:33 Europe/Berlin] Database connection successful
+[14-Aug-2025 07:00:33 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 07:00:33 Europe/Berlin] POST Data received: Array
+(
+    [name] => Joshua dela Cruz 
+    [contact_number] => 09052394718
+    [username] => joshuadelacruz88
+    [email] => joshuadelacruz88@outlook.com
+    [password] => Joshua@12345
+    [confirm_password] => Joshua@12345
+    [branch_id] => 2
+    [barangay_id] => 51
+    [sitio_purok] => West
+)
+
+[14-Aug-2025 07:00:33 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => joshuadelacruz88
+    [email] => joshuadelacruz88@outlook.com
+    [name] => Joshua dela Cruz
+    [contact_number] => 09052394718
+    [branch_id] => 2
+    [barangay_id] => 51
+    [sitio_purok] => West
+)
+
+[14-Aug-2025 07:00:33 Europe/Berlin] Started transaction
+[14-Aug-2025 07:00:33 Europe/Berlin] Attempting to insert user with query: 00000
+[14-Aug-2025 07:00:33 Europe/Berlin] User inserted successfully with ID: 20
+[14-Aug-2025 07:00:33 Europe/Berlin] Loyalty record created
+[14-Aug-2025 07:00:33 Europe/Berlin] Activity logged
+[14-Aug-2025 07:00:33 Europe/Berlin] Transaction committed
+[14-Aug-2025 07:00:33 Europe/Berlin] Registration successful for user: joshuadelacruz88
+[14-Aug-2025 07:01:27 Europe/Berlin] Database connection successful
+[14-Aug-2025 07:01:27 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 07:02:19 Europe/Berlin] Database connection successful
+[14-Aug-2025 07:02:19 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[14-Aug-2025 07:02:19 Europe/Berlin] POST Data received: Array
+(
+    [name] =>  Camille Mendoza
+    [contact_number] => 09283674529
+    [username] => camillemendoza50
+    [email] => camillemendoza50@gmail.com
+    [password] => Camille@12345
+    [confirm_password] => Camille@12345
+    [branch_id] => 2
+    [barangay_id] => 53
+    [sitio_purok] => East
+)
+
+[14-Aug-2025 07:02:19 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => camillemendoza50
+    [email] => camillemendoza50@gmail.com
+    [name] => Camille Mendoza
+    [contact_number] => 09283674529
+    [branch_id] => 2
+    [barangay_id] => 53
+    [sitio_purok] => East
+)
+
+[14-Aug-2025 07:02:19 Europe/Berlin] Started transaction
+[14-Aug-2025 07:02:19 Europe/Berlin] Attempting to insert user with query: 00000
+[14-Aug-2025 07:02:19 Europe/Berlin] User inserted successfully with ID: 21
+[14-Aug-2025 07:02:19 Europe/Berlin] Loyalty record created
+[14-Aug-2025 07:02:19 Europe/Berlin] Activity logged
+[14-Aug-2025 07:02:19 Europe/Berlin] Transaction committed
+[14-Aug-2025 07:02:19 Europe/Berlin] Registration successful for user: camillemendoza50
+[19-Oct-2025 07:15:05 Europe/Berlin] Database connection successful
+[19-Oct-2025 07:15:05 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 07:15:45 Europe/Berlin] Database connection successful
+[19-Oct-2025 07:15:45 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 07:15:45 Europe/Berlin] POST Data received: Array
+(
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [username] => gil
+    [email] => manalo@gmail.com
+    [password] => Qwerty@123
+    [confirm_password] => Qwerty@123
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:15:45 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => gil
+    [email] => manalo@gmail.com
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:15:45 Europe/Berlin] Started transaction
+[19-Oct-2025 07:15:45 Europe/Berlin] Attempting to insert user with query: 00000
+[19-Oct-2025 07:15:45 Europe/Berlin] User inserted successfully with ID: 23
+[19-Oct-2025 07:15:45 Europe/Berlin] Transaction rolled back due to error: Duplicate entry '23' for key 'customer_id'
+[19-Oct-2025 07:16:11 Europe/Berlin] Database connection successful
+[19-Oct-2025 07:16:11 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 07:16:11 Europe/Berlin] POST Data received: Array
+(
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [username] => gil
+    [email] => manalo@gmail.com
+    [password] => Qwerty@123
+    [confirm_password] => Qwerty@123
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:16:11 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => gil
+    [email] => manalo@gmail.com
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:16:11 Europe/Berlin] Started transaction
+[19-Oct-2025 07:16:11 Europe/Berlin] Error: Username already exists
+[19-Oct-2025 07:16:37 Europe/Berlin] Database connection successful
+[19-Oct-2025 07:16:37 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 07:16:37 Europe/Berlin] POST Data received: Array
+(
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [username] => mag
+    [email] => manalo@gmail.com
+    [password] => Qwerty@123
+    [confirm_password] => Qwerty@123
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:16:37 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => mag
+    [email] => manalo@gmail.com
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:16:37 Europe/Berlin] Started transaction
+[19-Oct-2025 07:16:37 Europe/Berlin] Error: Email already exists
+[19-Oct-2025 07:17:12 Europe/Berlin] Database connection successful
+[19-Oct-2025 07:17:12 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 07:17:12 Europe/Berlin] POST Data received: Array
+(
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [username] => mag
+    [email] => hello@gmail.com
+    [password] => Qwerty@123
+    [confirm_password] => Qwerty@123
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:17:12 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => mag
+    [email] => hello@gmail.com
+    [name] => Gellie Manalo
+    [contact_number] => 09949098050
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => cadre
+)
+
+[19-Oct-2025 07:17:12 Europe/Berlin] Started transaction
+[19-Oct-2025 07:17:12 Europe/Berlin] Attempting to insert user with query: 00000
+[19-Oct-2025 07:17:12 Europe/Berlin] User inserted successfully with ID: 24
+[19-Oct-2025 07:17:12 Europe/Berlin] Loyalty record created
+[19-Oct-2025 07:17:12 Europe/Berlin] Activity logged
+[19-Oct-2025 07:17:12 Europe/Berlin] Transaction committed
+[19-Oct-2025 07:17:12 Europe/Berlin] Registration successful for user: mag
+[19-Oct-2025 10:00:54 Europe/Berlin] Database connection successful
+[19-Oct-2025 10:00:54 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 10:02:19 Europe/Berlin] Database connection successful
+[19-Oct-2025 10:02:19 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 10:02:19 Europe/Berlin] POST Data received: Array
+(
+    [name] => mj mm
+    [contact_number] => 09123456789
+    [username] => mjmm
+    [email] => mjmm@gmail.com
+    [password] => Qwerty123!
+    [confirm_password] => Qwerty123!
+    [branch_id] => 2
+    [barangay_id] => 7
+    [sitio_purok] => Irrigation
+)
+
+[19-Oct-2025 10:02:19 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => mjmm
+    [email] => mjmm@gmail.com
+    [name] => mj mm
+    [contact_number] => 09123456789
+    [branch_id] => 2
+    [barangay_id] => 7
+    [sitio_purok] => Irrigation
+)
+
+[19-Oct-2025 10:02:19 Europe/Berlin] Started transaction
+[19-Oct-2025 10:02:19 Europe/Berlin] Error: Username already exists
+[19-Oct-2025 10:03:12 Europe/Berlin] Database connection successful
+[19-Oct-2025 10:03:12 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[19-Oct-2025 10:03:12 Europe/Berlin] POST Data received: Array
+(
+    [name] => mj mm
+    [contact_number] => 09123456789
+    [username] => mjmmm
+    [email] => mjmm@gmail.com
+    [password] => Qwerty123!
+    [confirm_password] => Qwerty123!
+    [branch_id] => 2
+    [barangay_id] => 6
+    [sitio_purok] => Irrigation
+)
+
+[19-Oct-2025 10:03:12 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => mjmmm
+    [email] => mjmm@gmail.com
+    [name] => mj mm
+    [contact_number] => 09123456789
+    [branch_id] => 2
+    [barangay_id] => 6
+    [sitio_purok] => Irrigation
+)
+
+[19-Oct-2025 10:03:12 Europe/Berlin] Started transaction
+[19-Oct-2025 10:03:12 Europe/Berlin] Attempting to insert user with query: 00000
+[19-Oct-2025 10:03:12 Europe/Berlin] User inserted successfully with ID: 25
+[19-Oct-2025 10:03:12 Europe/Berlin] Loyalty record created
+[19-Oct-2025 10:03:12 Europe/Berlin] Activity logged
+[19-Oct-2025 10:03:12 Europe/Berlin] Transaction committed
+[19-Oct-2025 10:03:12 Europe/Berlin] Registration successful for user: mjmmm
+[20-Oct-2025 09:42:57 Europe/Berlin] Database connection successful
+[20-Oct-2025 09:42:57 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[20-Oct-2025 09:44:54 Europe/Berlin] Database connection successful
+[20-Oct-2025 09:44:54 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[20-Oct-2025 09:44:54 Europe/Berlin] POST Data received: Array
+(
+    [name] => mary mm
+    [contact_number] => 09876543211
+    [username] => maryjmm
+    [email] => maryjoymm@gmail.com
+    [password] => Qwerty@123
+    [confirm_password] => Qwerty@123
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => cadre
+)
+
+[20-Oct-2025 09:44:54 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => maryjmm
+    [email] => maryjoymm@gmail.com
+    [name] => mary mm
+    [contact_number] => 09876543211
+    [branch_id] => 1
+    [barangay_id] => 19
+    [sitio_purok] => cadre
+)
+
+[20-Oct-2025 09:44:54 Europe/Berlin] Started transaction
+[20-Oct-2025 09:44:54 Europe/Berlin] Attempting to insert user with query: 00000
+[20-Oct-2025 09:44:54 Europe/Berlin] User inserted successfully with ID: 23
+[20-Oct-2025 09:44:54 Europe/Berlin] Loyalty record created
+[20-Oct-2025 09:44:54 Europe/Berlin] Activity logged
+[20-Oct-2025 09:44:54 Europe/Berlin] Transaction committed
+[20-Oct-2025 09:44:54 Europe/Berlin] Registration successful for user: maryjmm
+[06-Nov-2025 17:11:50 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:11:50 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:12:05 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:12:05 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:12:10 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:12:10 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:16:36 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:16:36 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:17:02 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:17:02 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:17:08 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:17:08 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:30:18 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:30:18 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:32:21 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:32:21 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:32:23 Europe/Berlin] POST Data received: Array
+(
+    [name] => Angellie
+    [contact_number] => 09876543211
+    [username] => Angellie
+    [email] => angellie@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 1
+    [barangay_id] => 20
+    [sitio_purok] => St. Camile
+)
+
+[06-Nov-2025 17:32:23 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Angellie
+    [email] => angellie@gmail.com
+    [name] => Angellie
+    [contact_number] => 09876543211
+    [branch_id] => 1
+    [barangay_id] => 20
+    [sitio_purok] => St. Camile
+)
+
+[06-Nov-2025 17:32:23 Europe/Berlin] Started transaction
+[06-Nov-2025 17:32:23 Europe/Berlin] Attempting to insert user with query: 00000
+[06-Nov-2025 17:32:23 Europe/Berlin] User inserted successfully with ID: 23
+[06-Nov-2025 17:32:23 Europe/Berlin] Loyalty record created
+[06-Nov-2025 17:32:23 Europe/Berlin] Activity logged
+[06-Nov-2025 17:32:23 Europe/Berlin] Transaction committed
+[06-Nov-2025 17:32:23 Europe/Berlin] Registration successful for user: Angellie
+[06-Nov-2025 17:34:53 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:34:53 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:36:03 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:36:03 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:36:03 Europe/Berlin] POST Data received: Array
+(
+    [name] => Anne
+    [contact_number] => 09876543211
+    [username] => Anne
+    [email] => anne@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 1
+    [barangay_id] => 15
+    [sitio_purok] => Silok
+)
+
+[06-Nov-2025 17:36:03 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Anne
+    [email] => anne@gmail.com
+    [name] => Anne
+    [contact_number] => 09876543211
+    [branch_id] => 1
+    [barangay_id] => 15
+    [sitio_purok] => Silok
+)
+
+[06-Nov-2025 17:36:03 Europe/Berlin] Started transaction
+[06-Nov-2025 17:36:03 Europe/Berlin] Error: Email already exists
+[06-Nov-2025 17:37:25 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:37:25 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:37:25 Europe/Berlin] POST Data received: Array
+(
+    [name] => Luisa
+    [contact_number] => 09876543211
+    [username] => Luisa
+    [email] => luisa@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => cadre
+)
+
+[06-Nov-2025 17:37:25 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Luisa
+    [email] => luisa@gmail.com
+    [name] => Luisa
+    [contact_number] => 09876543211
+    [branch_id] => 2
+    [barangay_id] => 49
+    [sitio_purok] => cadre
+)
+
+[06-Nov-2025 17:37:25 Europe/Berlin] Started transaction
+[06-Nov-2025 17:37:25 Europe/Berlin] Attempting to insert user with query: 00000
+[06-Nov-2025 17:37:25 Europe/Berlin] User inserted successfully with ID: 24
+[06-Nov-2025 17:37:25 Europe/Berlin] Loyalty record created
+[06-Nov-2025 17:37:25 Europe/Berlin] Activity logged
+[06-Nov-2025 17:37:25 Europe/Berlin] Transaction committed
+[06-Nov-2025 17:37:25 Europe/Berlin] Registration successful for user: Luisa
+[06-Nov-2025 17:38:57 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:38:57 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:40:35 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:40:35 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:40:35 Europe/Berlin] POST Data received: Array
+(
+    [name] => Andrei
+    [contact_number] => 09876543211
+    [username] => Andrei
+    [email] => andrei@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 2
+    [barangay_id] => 51
+    [sitio_purok] => St. Camile
+)
+
+[06-Nov-2025 17:40:35 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Andrei
+    [email] => andrei@gmail.com
+    [name] => Andrei
+    [contact_number] => 09876543211
+    [branch_id] => 2
+    [barangay_id] => 51
+    [sitio_purok] => St. Camile
+)
+
+[06-Nov-2025 17:40:35 Europe/Berlin] Started transaction
+[06-Nov-2025 17:40:35 Europe/Berlin] Attempting to insert user with query: 00000
+[06-Nov-2025 17:40:35 Europe/Berlin] User inserted successfully with ID: 25
+[06-Nov-2025 17:40:35 Europe/Berlin] Loyalty record created
+[06-Nov-2025 17:40:35 Europe/Berlin] Activity logged
+[06-Nov-2025 17:40:35 Europe/Berlin] Transaction committed
+[06-Nov-2025 17:40:35 Europe/Berlin] Registration successful for user: Andrei
+[06-Nov-2025 17:42:01 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:42:01 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:43:04 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:43:04 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:43:04 Europe/Berlin] POST Data received: Array
+(
+    [name] => Williene
+    [contact_number] => 09876543211
+    [username] => Williene
+    [email] => williene@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 1
+    [barangay_id] => 12
+    [sitio_purok] => cadre
+)
+
+[06-Nov-2025 17:43:04 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Williene
+    [email] => williene@gmail.com
+    [name] => Williene
+    [contact_number] => 09876543211
+    [branch_id] => 1
+    [barangay_id] => 12
+    [sitio_purok] => cadre
+)
+
+[06-Nov-2025 17:43:04 Europe/Berlin] Started transaction
+[06-Nov-2025 17:43:04 Europe/Berlin] Attempting to insert user with query: 00000
+[06-Nov-2025 17:43:04 Europe/Berlin] User inserted successfully with ID: 26
+[06-Nov-2025 17:43:04 Europe/Berlin] Loyalty record created
+[06-Nov-2025 17:43:04 Europe/Berlin] Activity logged
+[06-Nov-2025 17:43:04 Europe/Berlin] Transaction committed
+[06-Nov-2025 17:43:04 Europe/Berlin] Registration successful for user: Williene
+[06-Nov-2025 17:44:02 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:44:02 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:44:57 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:44:57 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:44:57 Europe/Berlin] POST Data received: Array
+(
+    [name] => Adrian
+    [contact_number] => 09123456789
+    [username] => Adrian
+    [email] => adrian@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Irrigation
+)
+
+[06-Nov-2025 17:44:57 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Adrian
+    [email] => adrian@gmail.com
+    [name] => Adrian
+    [contact_number] => 09123456789
+    [branch_id] => 2
+    [barangay_id] => 47
+    [sitio_purok] => Irrigation
+)
+
+[06-Nov-2025 17:44:57 Europe/Berlin] Started transaction
+[06-Nov-2025 17:44:57 Europe/Berlin] Attempting to insert user with query: 00000
+[06-Nov-2025 17:44:57 Europe/Berlin] User inserted successfully with ID: 27
+[06-Nov-2025 17:44:57 Europe/Berlin] Loyalty record created
+[06-Nov-2025 17:44:57 Europe/Berlin] Activity logged
+[06-Nov-2025 17:44:57 Europe/Berlin] Transaction committed
+[06-Nov-2025 17:44:57 Europe/Berlin] Registration successful for user: Adrian
+[06-Nov-2025 17:47:13 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:47:13 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:48:11 Europe/Berlin] Database connection successful
+[06-Nov-2025 17:48:11 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[06-Nov-2025 17:48:11 Europe/Berlin] POST Data received: Array
+(
+    [name] => Marc
+    [contact_number] => 09123456789
+    [username] => Marc
+    [email] => marc@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 1
+    [barangay_id] => 2
+    [sitio_purok] => Irrigation
+)
+
+[06-Nov-2025 17:48:11 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Marc
+    [email] => marc@gmail.com
+    [name] => Marc
+    [contact_number] => 09123456789
+    [branch_id] => 1
+    [barangay_id] => 2
+    [sitio_purok] => Irrigation
+)
+
+[06-Nov-2025 17:48:11 Europe/Berlin] Started transaction
+[06-Nov-2025 17:48:11 Europe/Berlin] Attempting to insert user with query: 00000
+[06-Nov-2025 17:48:11 Europe/Berlin] User inserted successfully with ID: 28
+[06-Nov-2025 17:48:11 Europe/Berlin] Loyalty record created
+[06-Nov-2025 17:48:11 Europe/Berlin] Activity logged
+[06-Nov-2025 17:48:11 Europe/Berlin] Transaction committed
+[06-Nov-2025 17:48:11 Europe/Berlin] Registration successful for user: Marc
+[24-Nov-2025 06:08:10 Europe/Berlin] Database connection successful
+[24-Nov-2025 06:08:10 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[24-Nov-2025 06:09:36 Europe/Berlin] Database connection successful
+[24-Nov-2025 06:09:36 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[24-Nov-2025 06:09:36 Europe/Berlin] POST Data received: Array
+(
+    [name] => Luisa Villafuerte
+    [contact_number] => 09949021111
+    [username] => Luisa
+    [email] => luisanuera@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 1
+    [barangay_id] => 20
+    [sitio_purok] => St. Camile
+)
+
+[24-Nov-2025 06:09:36 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Luisa
+    [email] => luisanuera@gmail.com
+    [name] => Luisa Villafuerte
+    [contact_number] => 09949021111
+    [branch_id] => 1
+    [barangay_id] => 20
+    [sitio_purok] => St. Camile
+)
+
+[24-Nov-2025 06:09:36 Europe/Berlin] Started transaction
+[24-Nov-2025 06:09:36 Europe/Berlin] Attempting to insert user with query: 00000
+[24-Nov-2025 06:09:36 Europe/Berlin] User inserted successfully with ID: 23
+[24-Nov-2025 06:09:36 Europe/Berlin] Loyalty record created
+[24-Nov-2025 06:09:36 Europe/Berlin] Activity logged
+[24-Nov-2025 06:09:36 Europe/Berlin] Transaction committed
+[24-Nov-2025 06:09:36 Europe/Berlin] Registration successful for user: Luisa
+[24-Nov-2025 06:11:27 Europe/Berlin] Database connection successful
+[24-Nov-2025 06:11:27 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[24-Nov-2025 06:12:40 Europe/Berlin] Database connection successful
+[24-Nov-2025 06:12:40 Europe/Berlin] Fetched branches: Array
+(
+    [0] => Array
+        (
+            [branch_id] => 2
+            [branch_name] => Calero
+        )
+
+    [1] => Array
+        (
+            [branch_id] => 1
+            [branch_name] => Lazareto
+        )
+
+)
+
+[24-Nov-2025 06:12:40 Europe/Berlin] POST Data received: Array
+(
+    [name] => Williene Manalo
+    [contact_number] => 09876543211
+    [username] => Will
+    [email] => will@gmail.com
+    [password] => @Qwerty123
+    [confirm_password] => @Qwerty123
+    [branch_id] => 2
+    [barangay_id] => 53
+    [sitio_purok] => phase1
+)
+
+[24-Nov-2025 06:12:40 Europe/Berlin] Sanitized Data: Array
+(
+    [username] => Will
+    [email] => will@gmail.com
+    [name] => Williene Manalo
+    [contact_number] => 09876543211
+    [branch_id] => 2
+    [barangay_id] => 53
+    [sitio_purok] => phase1
+)
+
+[24-Nov-2025 06:12:40 Europe/Berlin] Started transaction
+[24-Nov-2025 06:12:40 Europe/Berlin] Attempting to insert user with query: 00000
+[24-Nov-2025 06:12:40 Europe/Berlin] User inserted successfully with ID: 24
+[24-Nov-2025 06:12:40 Europe/Berlin] Loyalty record created
+[24-Nov-2025 06:12:40 Europe/Berlin] Activity logged
+[24-Nov-2025 06:12:40 Europe/Berlin] Transaction committed
+[24-Nov-2025 06:12:40 Europe/Berlin] Registration successful for user: Will
