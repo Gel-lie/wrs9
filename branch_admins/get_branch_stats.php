@@ -254,7 +254,10 @@ switch ($action) {
             $stmt = $conn->prepare("
                 SELECT DATE(al.created_at) AS d,
                        SUM(al.activity_type = 'login') AS logins,
-                       SUM(al.activity_type IN ('order_placed', 'order_completed', 'transaction')) AS transactions
+                       SUM(al.activity_type = 'logout') AS logouts,
+                       SUM(al.activity_type IN ('order_placed', 'order_completed', 'transaction')) AS transactions,
+                       SUM(al.activity_type = 'notification') AS notifications,
+                       SUM(al.activity_type = 'message') AS messages
                 FROM activity_log al
                 JOIN users u ON al.user_id = u.user_id
                 WHERE u.branch_id = ? AND DATE(al.created_at) BETWEEN ? AND ?
@@ -275,16 +278,25 @@ switch ($action) {
                     });
 
                     $logins = 0;
+                    $logouts = 0;
                     $transactions = 0;
+                    $notifications = 0;
+                    $messages = 0;
                     if (!empty($dayData)) {
                         $logins = (int)$dayData[0]['logins'];
+                        $logouts = (int)$dayData[0]['logouts'];
                         $transactions = (int)$dayData[0]['transactions'];
+                        $notifications = (int)$dayData[0]['notifications'];
+                        $messages = (int)$dayData[0]['messages'];
                     }
 
                     $timeline[] = [
                         'date' => date('M d', strtotime($d)),
                         'login_count' => $logins,
-                        'transaction_count' => $transactions
+                        'logout_count' => $logouts,
+                        'transaction_count' => $transactions,
+                        'notification_count' => $notifications,
+                        'message_count' => $messages
                     ];
                 }
 

@@ -298,7 +298,7 @@ if ($branch_name) {
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-white">
-                    <h5 class="card-title mb-0">Customer Login Timeline</h5>
+                    <h5 class="card-title mb-0">History Timeline
                     <small class="text-muted">Daily login activity for all Lazareto branch customers over the last 30 days</small>
                 </div>
                 <div class="card-body">
@@ -843,7 +843,10 @@ if ($branch_name) {
                 if (ctx && timeline.length > 0) {
                     const dates = timeline.map(item => item.date);
                     const loginCounts = timeline.map(item => item.login_count);
+                    const logoutCounts = timeline.map(item => item.logout_count);
                     const transactionCounts = timeline.map(item => item.transaction_count);
+                    const notificationCounts = timeline.map(item => item.notification_count);
+                    const messageCounts = timeline.map(item => item.message_count);
 
                     new Chart(ctx, {
                         type: 'line',
@@ -861,10 +864,40 @@ if ($branch_name) {
                                     pointHoverRadius: 5
                                 },
                                 {
+                                    label: 'Logout Count',
+                                    data: logoutCounts,
+                                    borderColor: 'rgba(255, 99, 132, 0.9)', // Red
+                                    backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointRadius: 3,
+                                    pointHoverRadius: 5
+                                },
+                                {
                                     label: 'Transaction Count',
                                     data: transactionCounts,
                                     borderColor: 'rgba(63, 81, 181, 0.9)', // Indigo
                                     backgroundColor: 'rgba(63, 81, 181, 0.1)',
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointRadius: 3,
+                                    pointHoverRadius: 5
+                                },
+                                {
+                                    label: 'Notification Count',
+                                    data: notificationCounts,
+                                    borderColor: 'rgba(255, 193, 7, 0.9)', // Yellow
+                                    backgroundColor: 'rgba(255, 193, 7, 0.1)',
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointRadius: 3,
+                                    pointHoverRadius: 5
+                                },
+                                {
+                                    label: 'Message Count',
+                                    data: messageCounts,
+                                    borderColor: 'rgba(40, 167, 69, 0.9)', // Green
+                                    backgroundColor: 'rgba(40, 167, 69, 0.1)',
                                     fill: true,
                                     tension: 0.4,
                                     pointRadius: 3,
