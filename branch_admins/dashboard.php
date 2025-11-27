@@ -293,6 +293,21 @@ if ($branch_name) {
         </div>
     </div>
 
+    <!-- Customer Login Timeline Chart -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-white">
+                    <h5 class="card-title mb-0">Customer Login Timeline</h5>
+                    <small class="text-muted">Daily login activity for all Lazareto branch customers over the last 30 days</small>
+                </div>
+                <div class="card-body">
+                    <canvas id="customerLoginTimeline" style="height:300px;"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="row">
 
         <!-- Recent Orders -->
@@ -815,6 +830,82 @@ if ($branch_name) {
             })
             .fail(function() {
                 console.error('Failed to load customer metrics data');
+            });
+    })();
+
+    (function() {
+        // Customer Timeline Chart
+        $.getJSON('get_branch_stats.php', { action: 'customer_timeline' })
+            .done(function(resp) {
+                const timeline = resp.timeline || [];
+
+                const ctx = document.getElementById('customerLoginTimeline');
+                if (ctx && timeline.length > 0) {
+                    const dates = timeline.map(item => item.date);
+                    const loginCounts = timeline.map(item => item.login_count);
+                    const transactionCounts = timeline.map(item => item.transaction_count);
+
+                    new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: dates,
+                            datasets: [
+                                {
+                                    label: 'Login Count',
+                                    data: loginCounts,
+                                    borderColor: 'rgba(138, 43, 226, 0.9)', // Violet
+                                    backgroundColor: 'rgba(138, 43, 226, 0.1)',
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointRadius: 3,
+                                    pointHoverRadius: 5
+                                },
+                                {
+                                    label: 'Transaction Count',
+                                    data: transactionCounts,
+                                    borderColor: 'rgba(63, 81, 181, 0.9)', // Indigo
+                                    backgroundColor: 'rgba(63, 81, 181, 0.1)',
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointRadius: 3,
+                                    pointHoverRadius: 5
+                                }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    ticks: {
+                                        stepSize: 1
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: { position: 'top' },
+                                tooltip: {
+                                    mode: 'index',
+                                    intersect: false,
+                                    callbacks: {
+                                        title: function(context) {
+                                            const dateIndex = context[0].dataIndex;
+                                            const dateData = timeline[dateIndex];
+                                            return 'Date: ' + dateData.date;
+                                        },
+                                        label: function(context) {
+                                            return context.dataset.label + ': ' + context.parsed.y;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            })
+            .fail(function() {
+                console.error('Failed to load customer timeline data');
             });
     })();
 </script>

@@ -232,6 +232,71 @@ switch ($action) {
         echo json_encode(['data' => $data]);
         break;
 
+    case 'customer_timeline':
+        // Return last 30 days of customer activities from activity_log for Lazareto branch
+        $days = 30;
+        $startDate = date('Y-m-d', strtotime("-" . ($days - 1) . " days"));
+        $endDate = date('Y-m-d');
+
+        // Get Lazareto branch ID
+        $lazaretoBranchId = null;
+        $branchStmt = $conn->prepare("SELECT branch_id FROM branches WHERE branch_name = 'Lazareto'");
+        if ($branchStmt) {
+            $branchStmt->execute();
+            $branchRes = $branchStmt->get_result();
+            if ($branchRes && $branchRes->num_rows > 0) {
+                $lazaretoBranchId = $branchRes->fetch_assoc()['branch_id'];
+            }
+        }
+
+        if ($lazaretoBranchId) {
+            // Get activity log data for Lazareto branch customers
+            $stmt = $conn->prepare("
+                SELECT DATE(al.created_at) AS d,
+                       SUM(al.activity_type = 'login') AS logins,
+                       SUM(al.activity_type IN ('order_placed', 'order_completed', 'transaction')) AS transactions
+                FROM activity_log al
+                JOIN users u ON al.user_id = u.user_id
+                WHERE u.branch_id = ? AND DATE(al.created_at) BETWEEN ? AND ?
+                GROUP BY d
+                ORDER BY d
+            ");
+            $stmt->bind_param("iss", $lazaretoBranchId, $startDate, $endDate);
+            if ($stmt->execute()) {
+                $res = $stmt->get_result();
+                $activities = $res->fetch_all(MYSQLI_ASSOC);
+
+                // Build timeline data
+                $timeline = [];
+                for ($i = 0; $i < $days; $i++) {
+                    $d = date('Y-m-d', strtotime($startDate . " +$i days"));
+                    $dayData = array_filter($activities, function($activity) use ($d) {
+                        return $activity['d'] === $d;
+                    });
+
+                    $logins = 0;
+                    $transactions = 0;
+                    if (!empty($dayData)) {
+                        $logins = (int)$dayData[0]['logins'];
+                        $transactions = (int)$dayData[0]['transactions'];
+                    }
+
+                    $timeline[] = [
+                        'date' => date('M d', strtotime($d)),
+                        'login_count' => $logins,
+                        'transaction_count' => $transactions
+                    ];
+                }
+
+                echo json_encode(['timeline' => $timeline]);
+            } else {
+                echo json_encode(['timeline' => []]);
+            }
+        } else {
+            echo json_encode(['timeline' => []]);
+        }
+        break;
+
     default:
         echo json_encode(['error' => 'Invalid action']);
         break;
