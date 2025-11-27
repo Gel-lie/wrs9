@@ -83,10 +83,13 @@ if ($search) {
         u.name LIKE ? OR 
         u.email LIKE ? OR 
         u.contact_number LIKE ? OR
-        b.barangay_name LIKE ?
+        b.barangay_name LIKE ? OR
+        u.sitio_purok LIKE ? OR
+        u.household_surname LIKE ? OR
+        u.household_id_number LIKE ?
     )";
-    $params = array_merge($params, [$search_term, $search_term, $search_term, $search_term]);
-    $types .= "ssss";
+    $params = array_merge($params, [$search_term, $search_term, $search_term, $search_term, $search_term, $search_term, $search_term]);
+    $types .= "sssssss";
 }
 
 $query .= " GROUP BY u.user_id ORDER BY u.name";

@@ -118,6 +118,41 @@ $stmt->execute();
 $low_stock = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
 
 require_once '../includes/header.php';
+
+// Prepare combined inventory (price + stock) for this branch
+$branch_name = $admin['branch_name'] ?? '';
+$combined_labels = [];
+$combined_prices = [];
+$combined_stocks = [];
+if ($branch_name) {
+    // Pricing
+    $stmt = $conn->prepare("SELECT p.product_name, p.price FROM inventory i JOIN products p ON i.product_id = p.product_id JOIN branches b ON i.branch_id = b.branch_id WHERE b.branch_name = ? AND p.price IS NOT NULL ORDER BY p.product_name");
+    if ($stmt) {
+        $stmt->bind_param('s', $branch_name);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $pricing = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
+    } else { $pricing = []; }
+
+    // Stock
+    $stmt = $conn->prepare("SELECT p.product_name, i.quantity FROM inventory i JOIN products p ON i.product_id = p.product_id JOIN branches b ON i.branch_id = b.branch_id WHERE b.branch_name = ? ORDER BY p.product_name");
+    if ($stmt) {
+        $stmt->bind_param('s', $branch_name);
+        $stmt->execute();
+        $res = $stmt->get_result();
+        $stock = $res ? $res->fetch_all(MYSQLI_ASSOC) : [];
+    } else { $stock = []; }
+
+    $price_map = [];
+    foreach ($pricing as $p) { $price_map[$p['product_name']] = (float)$p['price']; }
+    $stock_map = [];
+    foreach ($stock as $s) { $stock_map[$s['product_name']] = (int)$s['quantity']; }
+
+    $combined_labels = array_values(array_unique(array_merge(array_keys($price_map), array_keys($stock_map))));
+    sort($combined_labels);
+    $combined_prices = array_map(function($name) use ($price_map) { return isset($price_map[$name]) ? $price_map[$name] : 0; }, $combined_labels);
+    $combined_stocks = array_map(function($name) use ($stock_map) { return isset($stock_map[$name]) ? $stock_map[$name] : 0; }, $combined_labels);
+}
 ?>
 
 <div class="container py-4">
@@ -177,29 +212,88 @@ require_once '../includes/header.php';
         </div>
     </div>
 
-    <div class="row">
-        <!-- Interactive Location Charts Card -->
-        <div class="col-12 mb-4">
+    <div class="row mb-4">
+        <!-- Combined Inventory Chart for this Branch -->
+        <div class="col-md-4 mb-4">
             <div class="card">
                 <div class="card-header bg-white">
-                    <h5 class="card-title mb-0">Orders by Location (Barangay → Sitio → Household)</h5>
-                    <small class="text-muted">Click a barangay bar to view sitios; click a sitio point to view households.</small>
+                    <h5 class="card-title mb-0">Inventory — Price & Current Stock</h5>
+                    <small class="text-muted">Product price (bars) and current stock (line) for this branch</small>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <canvas id="barChartBarangays" style="height:220px;"></canvas>
+                    <div class="chart-area" style="height:420px;">
+                        <canvas id="branchCombinedChart"></canvas>
+                    </div>
+                    <div class="small text-muted mt-2">Products listed alphabetically.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Donut Charts beside Inventory -->
+        <div class="col-md-8 mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title mb-0">Order Progress Status</h5>
                         </div>
-                        <div class="col-md-4">
-                            <canvas id="splineChartSitios" style="height:220px;"></canvas>
+                        <div class="card-body">
+                            <canvas id="orderProgressDonut"></canvas>
                         </div>
-                        <div class="col-md-4">
-                            <canvas id="pieChartHouseholds" style="height:220px;"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title mb-0">Stock Status</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="stockStatusDonut"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header bg-white">
+                            <h5 class="card-title mb-0">Customer Metrics</h5>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="customerMetricsDonut"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+
+    <!-- Interactive Location Charts Card -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-white">
+                    <h5 class="card-title mb-0">Bulk Order Location (Barangay - Sitio - Household)</h5>
+                    <small class="text-muted">Click a barangay bar to view sitios; click a sitio point to view households.</small>
+                </div>
+                <div class="card-body">
+                    <div class="row g-2">
+                        <div class="col-5">
+                            <canvas id="barChartBarangays" style="height:220px;"></canvas>
+                        </div>
+                        <div class="col-5">
+                            <canvas id="splineChartSitios" style="height:220px;"></canvas>
+                        </div>
+                        <div class="col-2">
+                            <div style="height:220px;">
+                                <canvas id="pieChartHouseholds" style="height:220px; width:100%;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
 
         <!-- Recent Orders -->
         <div class="col-md-8 mb-4">
@@ -339,6 +433,8 @@ require_once '../includes/header.php';
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
                 onClick: (evt, elements) => {
                     if (!elements.length) return;
@@ -370,6 +466,8 @@ require_once '../includes/header.php';
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: { legend: { display: false } },
                 onClick: (evt, elements) => {
                     if (!elements.length) return;
@@ -399,19 +497,33 @@ require_once '../includes/header.php';
                 labels: labels,
                 datasets: [{
                     data: values,
-                    backgroundColor: labels.map((_,i)=>`hsl(${i*40 % 360} 70% 50%)`)
+                    // Use indigo palette (material indigo #3f51b5 -> rgb(63,81,181)) with varying alpha
+                    backgroundColor: labels.map((_,i)=> `rgba(63,81,181,${Math.max(0.35, 0.95 - (i * 0.08))})`),
+                    borderColor: labels.map(() => 'rgba(48,63,159,1)'),
+                    borderWidth: 1
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     tooltip: {
                         callbacks: {
+                            title: function() {
+                                return '';
+                            },
                             label: function(context) {
                                 const i = context.dataIndex;
                                 const qty = values[i];
                                 const price = prices[i];
-                                const date = lastDelivery[i];
-                                return `${labels[i]} — Qty: ${qty}, Price: ₱${parseFloat(price).toFixed(2)}, Last Delivery: ${date}`;
+                                const dateTime = lastDelivery[i];
+                                return [
+                                    `${labels[i]}`,
+                                    `Quantity: ${qty}`,
+                                    `Price: ₱${parseFloat(price).toFixed(2)}`,
+                                    `Date: ${dateTime.split(' ')[0] || ''}`,
+                                    `Time: ${dateTime.split(' ')[1] || ''}`
+                                ];
                             }
                         }
                     }
@@ -433,14 +545,14 @@ require_once '../includes/header.php';
     }
 
     function loadSitios(barangay_id) {
-        fetchSitios(barangay_id).done(function(resp) {
+            fetchSitios(barangay_id).done(function(resp) {
             const rows = resp.data || [];
             // store barangay id on spline canvas for next step
             $("#splineChartSitios").data('barangay-id', barangay_id);
             renderSplineChart(rows);
             // Clear pie chart
             if (pieChart) pieChart.destroy();
-            $('#pieChartHouseholds').replaceWith('<canvas id="pieChartHouseholds" style="height:220px;"></canvas>');
+            $('#pieChartHouseholds').replaceWith('<canvas id="pieChartHouseholds" style="height:220px; width:100%;"></canvas>');
         });
     }
 
@@ -463,6 +575,248 @@ require_once '../includes/header.php';
             }
         });
     });
+
+    // Branch combined inventory chart (price + stock)
+    (function() {
+        const labels = <?= json_encode($combined_labels) ?>;
+        const prices = <?= json_encode($combined_prices) ?>;
+        const stocks = <?= json_encode($combined_stocks) ?>;
+        const ctx = document.getElementById('branchCombinedChart');
+
+        if (ctx && labels && labels.length) {
+            const maxPrice = Math.max(...prices, 0);
+            const suggestedPriceMax = Math.ceil(maxPrice / 100) * 100 || 100;
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            type: 'bar',
+                            label: 'Price (PHP)',
+                            data: prices,
+                            backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                            yAxisID: 'y1'
+                        },
+                        {
+                            type: 'line',
+                            label: 'Current Stock',
+                            data: stocks,
+                            borderColor: 'rgba(75, 192, 192, 0.9)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            fill: false,
+                            tension: 0.15,
+                            pointRadius: 4,
+                            yAxisID: 'y'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: { mode: 'index', intersect: false },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: 'Quantity (pcs)' },
+                            beginAtZero: true
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: { display: true, text: 'Price (PHP)' },
+                            beginAtZero: true,
+                            suggestedMax: suggestedPriceMax,
+                            ticks: { stepSize: 100, callback: function(value) { return '₱ ' + value; } }
+                        }
+                    },
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const label = context.dataset.label || '';
+                                    const value = context.parsed.y !== undefined ? context.parsed.y : context.raw;
+                                    if (label && label.toLowerCase().includes('price')) {
+                                        return label + ': ₱ ' + Number(value).toLocaleString();
+                                    }
+                                    return label + ': ' + value;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    })();
+
+    // Donut Charts for Lazareto Branch
+    (function() {
+        // Order Progress Donut Chart
+        $.getJSON('get_branch_stats.php', { action: 'order_progress' })
+            .done(function(resp) {
+                const data = resp.data || {};
+                const labels = Object.keys(data);
+                const values = Object.values(data);
+
+                const ctx = document.getElementById('orderProgressDonut');
+                if (ctx && labels.length > 0) {
+                    new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: values,
+                                backgroundColor: [
+                                    'rgba(255, 193, 7, 0.8)',   // pending - yellow
+                                    'rgba(0, 123, 255, 0.8)',   // processing - blue
+                                    'rgba(40, 167, 69, 0.8)',   // delivered - green
+                                    'rgba(220, 53, 69, 0.8)'    // cancelled - red
+                                ],
+                                borderColor: [
+                                    'rgba(255, 193, 7, 1)',
+                                    'rgba(0, 123, 255, 1)',
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(220, 53, 69, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'bottom' },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.parsed;
+                                            return label + ': ' + value;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            })
+            .fail(function() {
+                console.error('Failed to load order progress data');
+            });
+    })();
+
+    (function() {
+        // Stock Status Donut Chart
+        $.getJSON('get_branch_stats.php', { action: 'stock_status' })
+            .done(function(resp) {
+                const data = resp.data || {};
+                const labels = Object.keys(data);
+                const values = Object.values(data);
+
+                const ctx = document.getElementById('stockStatusDonut');
+                if (ctx && labels.length > 0) {
+                    new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: values,
+                                backgroundColor: [
+                                    'rgba(220, 53, 69, 0.8)',   // Out of Stock - red
+                                    'rgba(255, 193, 7, 0.8)',   // Low Stock - yellow
+                                    'rgba(40, 167, 69, 0.8)'    // In Stock - green
+                                ],
+                                borderColor: [
+                                    'rgba(220, 53, 69, 1)',
+                                    'rgba(255, 193, 7, 1)',
+                                    'rgba(40, 167, 69, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'bottom' },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.parsed;
+                                            return label + ': ' + value + ' products';
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            })
+            .fail(function() {
+                console.error('Failed to load stock status data');
+            });
+    })();
+
+    (function() {
+        // Customer Metrics Donut Chart
+        $.getJSON('get_branch_stats.php', { action: 'customer_metrics' })
+            .done(function(resp) {
+                const data = resp.data || {};
+                const labels = Object.keys(data);
+                const values = Object.values(data);
+
+                const ctx = document.getElementById('customerMetricsDonut');
+                if (ctx && labels.length > 0) {
+                    new Chart(ctx, {
+                        type: 'doughnut',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                data: values,
+                                backgroundColor: [
+                                    'rgba(0, 123, 255, 0.8)',   // Total Customers - blue
+                                    'rgba(40, 167, 69, 0.8)',   // Active Customers - green
+                                    'rgba(108, 117, 125, 0.8)', // Non-Active Customers - gray
+                                    'rgba(255, 193, 7, 0.8)'    // New Customers - yellow
+                                ],
+                                borderColor: [
+                                    'rgba(0, 123, 255, 1)',
+                                    'rgba(40, 167, 69, 1)',
+                                    'rgba(108, 117, 125, 1)',
+                                    'rgba(255, 193, 7, 1)'
+                                ],
+                                borderWidth: 2
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'bottom' },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            const label = context.label || '';
+                                            const value = context.parsed;
+                                            return label + ': ' + value;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            })
+            .fail(function() {
+                console.error('Failed to load customer metrics data');
+            });
+    })();
 </script>
 
 <?php require_once '../includes/footer.php'; ?> 

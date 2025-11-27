@@ -118,6 +118,120 @@ switch ($action) {
         echo json_encode(['data' => $rows, 'details' => $grouped]);
         break;
 
+    case 'order_progress':
+        // Return order status counts for Lazareto branch
+        $lazaretoBranchId = null;
+        $branchStmt = $conn->prepare("SELECT branch_id FROM branches WHERE branch_name = 'Lazareto'");
+        if ($branchStmt) {
+            $branchStmt->execute();
+            $branchRes = $branchStmt->get_result();
+            if ($branchRes && $branchRes->num_rows > 0) {
+                $lazaretoBranchId = $branchRes->fetch_assoc()['branch_id'];
+            }
+        }
+
+        if ($lazaretoBranchId) {
+            $stmt = $conn->prepare("
+                SELECT status, COUNT(*) as count
+                FROM orders
+                WHERE branch_id = ?
+                GROUP BY status
+            ");
+            $stmt->bind_param("i", $lazaretoBranchId);
+            $stmt->execute();
+            $res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
+            $data = [];
+            foreach ($res as $row) {
+                $data[$row['status']] = (int)$row['count'];
+            }
+        } else {
+            $data = [];
+        }
+
+        echo json_encode(['data' => $data]);
+        break;
+
+    case 'stock_status':
+        // Return stock status counts for Lazareto branch
+        $lazaretoBranchId = null;
+        $branchStmt = $conn->prepare("SELECT branch_id FROM branches WHERE branch_name = 'Lazareto'");
+        if ($branchStmt) {
+            $branchStmt->execute();
+            $branchRes = $branchStmt->get_result();
+            if ($branchRes && $branchRes->num_rows > 0) {
+                $lazaretoBranchId = $branchRes->fetch_assoc()['branch_id'];
+            }
+        }
+
+        if ($lazaretoBranchId) {
+            $stmt = $conn->prepare("
+                SELECT
+                    CASE
+                        WHEN i.quantity = 0 THEN 'Out of Stock'
+                        WHEN i.quantity <= i.low_stock_threshold THEN 'Low Stock'
+                        ELSE 'In Stock'
+                    END as status,
+                    COUNT(*) as count
+                FROM inventory i
+                WHERE i.branch_id = ?
+                GROUP BY status
+            ");
+            $stmt->bind_param("i", $lazaretoBranchId);
+            $stmt->execute();
+            $res = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+
+            $data = [];
+            foreach ($res as $row) {
+                $data[$row['status']] = (int)$row['count'];
+            }
+        } else {
+            $data = [];
+        }
+
+        echo json_encode(['data' => $data]);
+        break;
+
+    case 'customer_metrics':
+        // Return customer metrics for Lazareto branch (matching customers.php logic)
+        $lazaretoBranchId = null;
+        $branchStmt = $conn->prepare("SELECT branch_id FROM branches WHERE branch_name = 'Lazareto'");
+        if ($branchStmt) {
+            $branchStmt->execute();
+            $branchRes = $branchStmt->get_result();
+            if ($branchRes && $branchRes->num_rows > 0) {
+                $lazaretoBranchId = $branchRes->fetch_assoc()['branch_id'];
+            }
+        }
+
+        if ($lazaretoBranchId) {
+            // Get customer statistics matching customers.php
+            $stmt = $conn->prepare("
+                SELECT
+                    COUNT(*) as total_customers,
+                    COUNT(CASE WHEN status = 'active' THEN 1 END) as active_customers,
+                    COUNT(CASE WHEN status = 'inactive' THEN 1 END) as inactive_customers,
+                    COUNT(CASE WHEN registration_date >= DATE_SUB(NOW(), INTERVAL 30 DAY) THEN 1 END) as new_customers
+                FROM users
+                WHERE branch_id = ? AND role = 'customer'
+            ");
+            $stmt->bind_param("i", $lazaretoBranchId);
+            $stmt->execute();
+            $stats = $stmt->get_result()->fetch_assoc();
+
+            $data = [
+                'Total Customers' => (int)$stats['total_customers'],
+                'Active Customers' => (int)$stats['active_customers'],
+                'Inactive Customers' => (int)$stats['inactive_customers'],
+                'New Customers' => (int)$stats['new_customers']
+            ];
+        } else {
+            $data = [];
+        }
+
+        echo json_encode(['data' => $data]);
+        break;
+
     default:
         echo json_encode(['error' => 'Invalid action']);
         break;
